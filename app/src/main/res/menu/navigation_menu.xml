@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_nav"
+    >
+    <item
+        android:id="@+id/nav_add"
+        android:icon="@drawable/menu_icon"
+        android:title="@string/menu_add_book" />
+    <item
+        android:id="@+id/nav_issue"
+        android:icon="@drawable/menu_icon"
+        android:title="@string/menu_issue_book" />
+    <item
+        android:id="@+id/nav_return"
+        android:icon="@drawable/menu_icon"
+        android:title="@string/menu_return_book" />
+
+    <item
+        android:id="@+id/nav_search"
+        android:icon="@drawable/menu_icon"
+        android:title="@string/menu_search_book" />
+
+    <item
+        android:id="@+id/nav_list"
+        android:icon="@drawable/menu_icon"
+        android:title="@string/menu_list_book" />
+
+    <item
+        android:id="@+id/nav_logout"
+        android:icon="@drawable/menu_icon"
+        android:title="@string/menu_logout" />
+</menu>

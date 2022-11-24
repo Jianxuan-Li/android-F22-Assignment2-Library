@@ -1,22 +1,32 @@
 package jianxuan.li.jllibrary.data;
 
+// singleton to save the auth status
+// Path: app\src\main\java\jianxuan\li\jllibrary\data\DBHelper.java
 public class Auth {
-    private String username;
-    private String password;
-    private String emailId;
-    private String token;
+    private static Auth instance;
+    private boolean status = false;
 
-    public Auth(String username, String password, String emailId) {
-        this.username = username;
-        this.password = password;
-        this.emailId = emailId;
+    private Auth() {
     }
 
-    public String getUsername() {
-        return username;
+    public static Auth getInstance() {
+        if (instance == null) {
+            instance = new Auth();
+        }
+        return instance;
     }
 
-    public String getPassword() {
-        return password;
+    public boolean getStatus() {
+        return status;
+    }
+
+    public boolean login(){
+        status = true;
+        return true;
+    }
+
+    public boolean logout(){
+        status = false;
+        return true;
     }
 }

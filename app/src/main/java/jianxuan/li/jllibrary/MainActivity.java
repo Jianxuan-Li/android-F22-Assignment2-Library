@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 
+import jianxuan.li.jllibrary.data.Auth;
+
 public class MainActivity extends AppCompatActivity {
 
     Intent loginIntent, homeIntent;
@@ -14,12 +16,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         DBHelper dbhelper = new DBHelper(this);
-
-        setContentView(R.layout.activity_main);
-
         loginIntent = new Intent(MainActivity.this, LoginActivity.class);
         homeIntent = new Intent(MainActivity.this, HomeActivity.class);
 
-
+        Auth auth = Auth.getInstance();
+        if (auth.getStatus()) {
+            startActivity(homeIntent);
+            finish();
+        } else {
+            startActivity(loginIntent);
+            finish();
+        }
     }
 }
