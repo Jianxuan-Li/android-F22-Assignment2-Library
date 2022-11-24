@@ -25,7 +25,6 @@ public class HomeActivity extends AppCompatActivity {
     ActionBarDrawerToggle mToggle;
     NavigationView navView;
     SharedPreferences sharedPre;
-    Intent loginIntent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

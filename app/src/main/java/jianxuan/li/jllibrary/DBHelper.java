@@ -77,6 +77,8 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL("INSERT INTO Publisher (publisher) VALUES ('Pearson Education');");
         db.execSQL("INSERT INTO Publisher (publisher) VALUES ('McGraw Hill Education');");
         db.execSQL("INSERT INTO Publisher (publisher) VALUES ('Wiley');");
+
+        db.execSQL("INSERT INTO User (username, emailId, password) VALUES ('test', 'test@gmail.com', 'test');");
     }
 
     @Override

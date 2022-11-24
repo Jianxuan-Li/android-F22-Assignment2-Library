@@ -22,10 +22,8 @@ public class MainActivity extends AppCompatActivity {
         Auth auth = Auth.getInstance();
         if (auth.getStatus()) {
             startActivity(homeIntent);
-            finish();
         } else {
             startActivity(loginIntent);
-            finish();
         }
     }
 }

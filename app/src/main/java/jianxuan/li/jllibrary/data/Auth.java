@@ -5,6 +5,7 @@ package jianxuan.li.jllibrary.data;
 public class Auth {
     private static Auth instance;
     private boolean status = false;
+    private String username;
 
     private Auth() {
     }
@@ -18,6 +19,14 @@ public class Auth {
 
     public boolean getStatus() {
         return status;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getUsername() {
+        return username;
     }
 
     public boolean login(){
