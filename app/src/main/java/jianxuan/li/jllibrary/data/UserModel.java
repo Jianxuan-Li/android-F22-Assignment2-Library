@@ -46,4 +46,22 @@ public class UserModel {
         return true;
     }
 
+    public boolean register(String username, String password, String email){
+        DBHelper dbhelper = new DBHelper(context);
+
+        SQLiteDatabase db = dbhelper.getWritableDatabase();
+
+        // check user already exists
+        String query = "SELECT * FROM User WHERE username = '" + username + "' or emailId = '" + email + "'";
+        Cursor cursor = db.rawQuery(query, null);
+        if(cursor.getCount() > 0){
+            cursor.close();
+            return false;
+        }
+
+        String sql = "INSERT INTO User (username, password, emailId) VALUES ('" + username + "', '" + password + "','" + email + "')";
+        db.execSQL(sql);
+        return true;
+    }
+
 }

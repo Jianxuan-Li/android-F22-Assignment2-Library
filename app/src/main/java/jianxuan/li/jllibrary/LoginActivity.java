@@ -13,9 +13,7 @@ import jianxuan.li.jllibrary.data.UserModel;
 
 public class LoginActivity extends AppCompatActivity {
 
-    Button loginButton;
-    Intent homeIntent;
-
+    Button loginButton, registerButton;
     EditText username, password;
 
     @Override
@@ -25,6 +23,7 @@ public class LoginActivity extends AppCompatActivity {
 
         // widgets
         loginButton = findViewById(R.id.login);
+        registerButton = findViewById(R.id.register);
         username = findViewById(R.id.username);
         password = findViewById(R.id.password);
 
@@ -43,11 +42,17 @@ public class LoginActivity extends AppCompatActivity {
                 this.username.setText("");
                 this.password.setText("");
 
-                homeIntent = new Intent(LoginActivity.this, HomeActivity.class);
+                Intent homeIntent = new Intent(LoginActivity.this, HomeActivity.class);
                 startActivity(homeIntent);
             } else {
                 Toast.makeText(this, "Wrong identity", Toast.LENGTH_SHORT).show();
             }
+        });
+
+        // on click register button go to register activity
+        registerButton.setOnClickListener(v -> {
+            Intent registerIntent = new Intent(LoginActivity.this, RegisterActivity.class);
+            startActivity(registerIntent);
         });
     }
 }
