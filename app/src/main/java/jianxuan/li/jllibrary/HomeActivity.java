@@ -60,9 +60,10 @@ public class HomeActivity extends AppCompatActivity {
             Fragment fragment = null;
             switch (item.getItemId()) {
                 case R.id.nav_add:
-                    Toast.makeText(this, "gogo", Toast.LENGTH_SHORT).show();
+                    fragment = new AddBookFragment();
                     break;
                 case R.id.nav_issue:
+
                 case R.id.nav_return:
                 case R.id.nav_search:
                 case R.id.nav_list:
