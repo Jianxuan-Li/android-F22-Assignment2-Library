@@ -5,6 +5,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
@@ -25,6 +26,8 @@ public class HomeActivity extends AppCompatActivity {
     ActionBarDrawerToggle mToggle;
     NavigationView navView;
     SharedPreferences sharedPre;
+
+    FragmentTransaction ftgTrans;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,7 +83,7 @@ public class HomeActivity extends AppCompatActivity {
 
             // replace fragment
             if (fragment != null) {
-                FragmentTransaction ftgTrans = getSupportFragmentManager().beginTransaction();
+                ftgTrans = getSupportFragmentManager().beginTransaction();
                 ftgTrans.replace(R.id.frame, fragment);
                 ftgTrans.commit();
             }
