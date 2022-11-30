@@ -48,16 +48,47 @@ public class StockModel {
         if (cursor.moveToFirst()){
             do {
                 Book book = new Book();
-                book.setIsbn(cursor.getString(0));
-                book.setBookTitle(cursor.getString(1));
-                book.setPublisher(cursor.getString(2));
-                book.setQtyStock(cursor.getInt(3));
-                book.setPrice(cursor.getDouble(4));
+                book.setId(cursor.getInt(0));
+                book.setIsbn(cursor.getString(1));
+                book.setBookTitle(cursor.getString(2));
+                book.setPublisher(cursor.getString(3));
+                book.setQtyStock(cursor.getInt(4));
+                book.setPrice(cursor.getDouble(5));
                 books.add(book);
             } while (cursor.moveToNext());
         }
         cursor.close();
         db.close();
         return books;
+    }
+
+    public Book getBook(int bookId){
+        DBHelper dbhelper = new DBHelper(context);
+        SQLiteDatabase db = dbhelper.getReadableDatabase();
+        Book book = new Book();
+
+        String bookIdStr = String.valueOf(bookId);
+
+        String query = "SELECT * FROM Stock WHERE bookId = " + bookIdStr;
+
+        Cursor cursor = db.rawQuery(query, null);
+
+        if (cursor == null){
+            return null;
+        }
+
+        if (cursor.moveToFirst()){
+            book.setId(cursor.getInt(0));
+            book.setIsbn(cursor.getString(1));
+            book.setBookTitle(cursor.getString(2));
+            book.setPublisher(cursor.getString(3));
+            book.setQtyStock(cursor.getInt(4));
+            book.setPrice(cursor.getDouble(5));
+        }else{
+            return null;
+        }
+        cursor.close();
+        db.close();
+        return book;
     }
 }

@@ -11,6 +11,7 @@ public class Book {
             }
      */
 
+    private int id;
     private String isbn;
     private String bookTitle;
     private String publisher;
@@ -18,6 +19,10 @@ public class Book {
     private double price;
 
     // getters and setters
+    public int getId() { return id; }
+
+    public void setId(int id) { this.id = id; }
+
     public String getIsbn() {
         return isbn;
     }

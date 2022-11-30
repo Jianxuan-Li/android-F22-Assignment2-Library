@@ -66,9 +66,10 @@ public class HomeActivity extends AppCompatActivity {
                     fragment = new AddBookFragment();
                     break;
                 case R.id.nav_issue:
-
                 case R.id.nav_return:
                 case R.id.nav_search:
+                    fragment = new SearchBookFragment();
+                    break;
                 case R.id.nav_list:
                     fragment = new ListBookFragment();
                     break;
