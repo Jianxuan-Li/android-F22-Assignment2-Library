@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddBookFragment">
+    tools:context=".IssueBookFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,33 +16,25 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="24dp"
             android:gravity="center_horizontal"
-            android:text="@string/add_book_title"
+            android:text="@string/issue_book"
             android:textSize="35dp"
             android:textStyle="bold" />
 
-        <!--
-            "isbn TEXT",
-            "bookTitle TEXT",
-            "publisher TEXT",
-            "qtyStock INTEGER",
-            "price REAL"
-            -->
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:layout_marginLeft="24dp"
             android:layout_marginRight="24dp"
-            android:text="@string/book_title"
+            android:text="@string/book_id"
             />
         <EditText
-            android:id="@+id/etbookTitle"
+            android:id="@+id/edtBookId"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="24dp"
             android:layout_marginRight="24dp"
-            android:hint="Book Title" />
+            />
 
         <TextView
             android:layout_width="match_parent"
@@ -50,15 +42,14 @@
             android:layout_marginTop="24dp"
             android:layout_marginLeft="24dp"
             android:layout_marginRight="24dp"
-            android:text="@string/isbn"
+            android:text="@string/customer_name"
             />
         <EditText
-            android:id="@+id/etIsbn"
+            android:id="@+id/edtCustomerName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="24dp"
-            android:layout_marginRight="24dp"
-            android:hint="ISBN" />
+            android:layout_marginRight="24dp" />
 
         <TextView
             android:layout_width="match_parent"
@@ -66,32 +57,14 @@
             android:layout_marginTop="24dp"
             android:layout_marginLeft="24dp"
             android:layout_marginRight="24dp"
-            android:text="@string/publisher"
-            />
-        <Spinner
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="24dp"
-            android:layout_marginRight="24dp"
-            android:id="@+id/spnPublisher"
-            />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:layout_marginLeft="24dp"
-            android:layout_marginRight="24dp"
-            android:text="@string/quantity_in_stock"
+            android:text="@string/customer_email"
             />
         <EditText
-            android:id="@+id/etQtyStock"
+            android:id="@+id/edtCustomerEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="24dp"
-            android:layout_marginRight="24dp"
-            android:inputType="number"
-            android:hint="Qty Stock" />
+            android:layout_marginRight="24dp" />
 
         <TextView
             android:layout_width="match_parent"
@@ -99,25 +72,40 @@
             android:layout_marginTop="24dp"
             android:layout_marginLeft="24dp"
             android:layout_marginRight="24dp"
-            android:text="@string/price"
+            android:text="@string/quantity_to_be_issued"
             />
         <EditText
-            android:id="@+id/etPrice"
+            android:id="@+id/edtQtyToBeIssued"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="24dp"
             android:layout_marginRight="24dp"
-            android:inputType="numberDecimal"
-            android:hint="Price" />
+            android:inputType="number" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:text="@string/date_of_issue"
+            />
+        <EditText
+            android:id="@+id/edtDateOfIssue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:inputType="date" />
 
         <Button
-            android:id="@+id/btnAddBook"
+            android:id="@+id/btnSubmit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:layout_marginLeft="24dp"
             android:layout_marginRight="24dp"
-            android:text="@string/add_book" />
+            android:text="@string/submit" />
 
         <Button
             android:layout_width="match_parent"
@@ -129,4 +117,5 @@
             android:id="@+id/btnCancel" />
 
     </LinearLayout>
+
 </FrameLayout>

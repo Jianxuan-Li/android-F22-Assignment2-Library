@@ -19,11 +19,12 @@ public class ListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private final Context context;
 
     public class ListViewHolder extends RecyclerView.ViewHolder {
-        public TextView txtBookTitle, txtIsbn, txtPublisher, txtQtyStock, txtPrice;
+        public TextView txtBookId, txtBookTitle, txtIsbn, txtPublisher, txtQtyStock, txtPrice;
 
         public ListViewHolder(@NonNull View itemView) {
             super(itemView);
 
+            txtBookId = itemView.findViewById(R.id.txtBookId);
             txtBookTitle = itemView.findViewById(R.id.txtBookTitle);
             txtIsbn = itemView.findViewById(R.id.txtIsbn);
             txtPublisher = itemView.findViewById(R.id.txtPublisher);
@@ -47,11 +48,13 @@ public class ListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         Book book = books.get(position);
-        ((ListViewHolder) holder).txtBookTitle.setText("BookTitle: " + book.getBookTitle());
-        ((ListViewHolder) holder).txtIsbn.setText("ISBN: " + book.getIsbn());
-        ((ListViewHolder) holder).txtPublisher.setText("Publisher: " + book.getPublisher());
-        ((ListViewHolder) holder).txtQtyStock.setText("Quantity in Stock: " + String.valueOf(book.getQtyStock()));
-        ((ListViewHolder) holder).txtPrice.setText("Price: " + String.valueOf(book.getPrice()));
+        ListViewHolder listViewHolder = (ListViewHolder) holder;
+        listViewHolder.txtBookId.setText("Book ID: " + String.valueOf(book.getId()));
+        listViewHolder.txtBookTitle.setText("BookTitle: " + book.getBookTitle());
+        listViewHolder.txtIsbn.setText("ISBN: " + book.getIsbn());
+        listViewHolder.txtPublisher.setText("Publisher: " + book.getPublisher());
+        listViewHolder.txtQtyStock.setText("Quantity in Stock: " + String.valueOf(book.getQtyStock()));
+        listViewHolder.txtPrice.setText("Price: $" + String.valueOf(book.getPrice()));
     }
 
     @Override

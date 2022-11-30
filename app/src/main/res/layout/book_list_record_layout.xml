@@ -7,10 +7,17 @@
     >
 
     <TextView
+        android:id="@+id/txtBookId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        />
+
+    <TextView
         android:id="@+id/txtBookTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text=""
         android:textSize="20sp"
         android:textStyle="bold"
         />
@@ -19,7 +26,6 @@
         android:id="@+id/txtIsbn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text=""
         android:textSize="20sp"
         android:textStyle="bold"
         />
@@ -28,7 +34,6 @@
         android:id="@+id/txtPublisher"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text=""
         android:textSize="20sp"
         android:textStyle="bold"
         />
@@ -37,7 +42,6 @@
         android:id="@+id/txtQtyStock"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text=""
         android:textSize="20sp"
         android:textStyle="bold"
         />
@@ -46,7 +50,6 @@
         android:id="@+id/txtPrice"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text=""
         android:textSize="20sp"
         android:textStyle="bold"
         />
