@@ -70,6 +70,7 @@ public class HomeActivity extends AppCompatActivity {
                 case R.id.nav_return:
                 case R.id.nav_search:
                 case R.id.nav_list:
+                    fragment = new ListBookFragment();
                     break;
                 case R.id.nav_logout:
                     Auth auth = Auth.getInstance();
