@@ -40,4 +40,8 @@
     <string name="quantity_to_be_issued">Quantity to be issued</string>
     <string name="date_of_issue">Date of Issue</string>
     <string name="submit">Submit</string>
+    <string name="return_book">Return Book</string>
+    <string name="issue_id">Issue ID</string>
+    <string name="quantity_of_returned">Quantity of returned</string>
+    <string name="date_of_return">Date of Return</string>
 </resources>

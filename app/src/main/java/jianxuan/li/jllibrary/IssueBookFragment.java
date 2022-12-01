@@ -55,8 +55,17 @@ public class IssueBookFragment extends Fragment {
                 return;
             }
 
-            int bookIdInt = Integer.parseInt(bookId);
-            int qtyToBeIssuedInt = Integer.parseInt(qtyToBeIssued);
+            int bookIdInt;
+            int qtyToBeIssuedInt;
+
+            // check the book id and qty are integers
+            try {
+                bookIdInt = Integer.parseInt(bookId);
+                qtyToBeIssuedInt = Integer.parseInt(qtyToBeIssued);
+            } catch (NumberFormatException e) {
+                Toast.makeText(getContext(), "Book ID must be an integer", Toast.LENGTH_SHORT).show();
+                return;
+            }
 
             // check book id
             StockModel stockModel = new StockModel(getContext());
