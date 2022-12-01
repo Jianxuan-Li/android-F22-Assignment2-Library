@@ -2,6 +2,7 @@ package jianxuan.li.jllibrary;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -51,7 +52,9 @@ public class LoginActivity extends AppCompatActivity {
 
                 startActivity(homeIntent);
             } else {
-                Toast.makeText(this, "Wrong identity", Toast.LENGTH_SHORT).show();
+                // show a dialog to tell user that the username or password is incorrect
+                InvalidDialog invalidDialog = new InvalidDialog();
+                invalidDialog.show(getSupportFragmentManager(), "invalid dialog");
             }
         });
 
