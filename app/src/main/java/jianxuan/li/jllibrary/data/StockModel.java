@@ -91,4 +91,15 @@ public class StockModel {
         db.close();
         return book;
     }
+
+    public boolean changeQtyInStockByBookId(int bookId, int qty){
+        DBHelper dbhelper = new DBHelper(context);
+        SQLiteDatabase db = dbhelper.getWritableDatabase();
+        String bookIdStr = String.valueOf(bookId);
+        String newQtyStr = String.valueOf(qty);
+        String query = "UPDATE Stock SET qtyStock = " + newQtyStr + " WHERE bookId = " + bookIdStr;
+        db.execSQL(query);
+        db.close();
+        return true;
+    }
 }
