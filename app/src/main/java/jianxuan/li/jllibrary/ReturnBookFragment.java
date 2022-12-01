@@ -105,6 +105,11 @@ public class ReturnBookFragment extends Fragment {
                 return;
             }
 
+            if (issue.getBookId() != bookIdInt) {
+                edtBookId.setError("This book id does not issue with this issue id");
+                return;
+            }
+
             StockModel stockModel = new StockModel(getContext());
             Book book = stockModel.getBook(bookIdInt);
             if (book == null) {

@@ -52,7 +52,21 @@ public class SearchBookFragment extends Fragment {
             public void onClick(View v) {
                 Toast.makeText(getContext(), "Searching...", Toast.LENGTH_SHORT).show();
                 String bookId = edtBookId.getText().toString();
-                int bookIdInt = Integer.parseInt(bookId);
+
+                if (bookId.isEmpty()){
+                    Toast.makeText(getContext(), "Please enter a book ID", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                int bookIdInt;
+
+                try {
+                    bookIdInt = Integer.parseInt(bookId);
+                } catch (NumberFormatException e){
+                    Toast.makeText(getContext(), "Please enter a valid book ID", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 Book book = new StockModel(getContext()).getBook(bookIdInt);
 
                 if (book == null) {
